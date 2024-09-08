@@ -1,6 +1,6 @@
 import React , { useContext }from "react";
-
-
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Characters = () => {
 
@@ -16,20 +16,19 @@ export const Characters = () => {
           <div className="row m-3">
             {store.users.map((item, index) => (
               <div key={index} className="card m-3 col-sm-4 col-md-3 col-lg-2">
-                <div className="card bg-light h-100">
+                <div className="card-body h-100 w-100">
                   <img
                     className="card-img-top m-auto"
                     src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`}
                     onError={handleOnError}
                     style={{ width: "200px" }}
-                    alt="Card image cap"
-                  />
-                  <div>
-                    <div className="card-body">
-                      <h5 className="card-title text-dark">{item.name}</h5>
-                    </div>
+                    alt="Card image"
+                  /> 
+                  <div className="card-body">
+                      <h4 className="card-title">{item.name}</h4>
+
                   </div>
-                </div>
+                  </div>
               </div>
             ))}
           </div>
